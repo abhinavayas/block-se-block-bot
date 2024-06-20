@@ -12,7 +12,7 @@ require("dotenv").config();
 const { Telegraf } = require("telegraf");
 const BOT_TOKEN = `7100307300:AAE4iqNIO055bgYWpkRa3jwHyamhr_l8fAI`;
 const bot = new Telegraf(BOT_TOKEN);
-try {
+
 expressApp.get("/", (req, res) => {
   res.status(200).json({
     message: "Running",
@@ -99,4 +99,7 @@ Check out : https://blockseblock.com/`,
 });
 
 bot.launch();
-} catch (e) {}
+
+expressApp.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
